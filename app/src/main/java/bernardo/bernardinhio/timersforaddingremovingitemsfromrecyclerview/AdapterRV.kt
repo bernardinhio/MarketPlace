@@ -24,13 +24,14 @@ class AdapterRV internal constructor(private val arrayListProducts: ArrayList<Pr
         val (imageName, title, location, price) = arrayListProducts[position]
 
 
+        // set image resource
         val context = holder.ivProductImage.context
         val id = context.resources.getIdentifier(imageName, "drawable", context.packageName)
         holder.ivProductImage.setImageResource(id)
-
+        // set other views values
         holder.tvProductTitle.text = title
-        holder.tvProductLocation.text = location
-        holder.tvProductPrice.text = price
+        holder.tvProductLocation.text = "In $location"
+        holder.tvProductPrice.text = "$price€"
     }
 
     override fun getItemCount(): Int {

@@ -1,10 +1,10 @@
 package bernardo.bernardinhio.timersforaddingremovingitemsfromrecyclerview
 
 data class ProductModel(
-        val imageName : String = "",
-        val title : String = "",
-        val location : String = "",
-        val price : String =""
+        var imageName : String = "",
+        var title : String = "",
+        var location : String = "",
+        var price : String =""
 ){
 
 }
