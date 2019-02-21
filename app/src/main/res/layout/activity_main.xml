@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/info_consumers"
-            app:layout_constraintRight_toLeftOf="@id/info_consumers"/>
+            app:layout_constraintRight_toLeftOf="@id/bt_refresh"/>
         <TextView
             android:id="@+id/info_consumers"
             android:text="Consumers (7)"
@@ -37,12 +37,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/info_producers"
-            app:layout_constraintLeft_toRightOf="@id/info_producers"/>
+            app:layout_constraintLeft_toRightOf="@id/bt_refresh"/>
         <Button
             android:id="@+id/bt_add_producer"
-            android:text="Add producer"
-            android:onClick="addProducer"
-            android:textSize="20sp"
+            android:text="Add Producer"
+            android:onClick="onClickAddProducer"
+            android:textSize="15sp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="#FFFFFF"
             android:textAllCaps="false"
@@ -53,12 +53,28 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/info_producers"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/bt_refresh"/>
+        <Button
+            android:id="@+id/bt_refresh"
+            android:text="Refresh"
+            android:onClick="resetActivity"
+            android:textSize="15sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:background="@drawable/button_submit"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/info_producers"
+            app:layout_constraintLeft_toRightOf="@id/bt_add_producer"
             app:layout_constraintRight_toLeftOf="@id/bt_add_consumer"/>
         <Button
             android:id="@+id/bt_add_consumer"
             android:text="Add Consumer"
-            android:onClick="addConsumer"
-            android:textSize="20sp"
+            android:onClick="onClickAddConsumer"
+            android:textSize="15sp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="#FFFFFF"
             android:textAllCaps="false"
@@ -69,7 +85,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/info_consumers"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/bt_add_producer"/>
+            app:layout_constraintLeft_toRightOf="@id/bt_refresh"/>
         <TextView
             android:id="@+id/feedback_added_removed"
             android:text="Producer 1 added Item Jus"
@@ -79,8 +95,8 @@
             android:background="#5AA700"
             android:layout_marginTop="10sp"
             android:paddingTop="5sp"
-            android:paddingLeft="5sp"
-            android:paddingRight="5sp"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/bt_add_producer"/>
