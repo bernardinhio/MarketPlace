@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="10sp"
         android:background="#000000">
         <TextView
             android:id="@+id/info_producers"
@@ -75,9 +76,11 @@
             android:textSize="20sp"
             android:fontFamily="sans-serif-condensed"
             android:textColor="#FFFFFF"
-            android:background="#F85151"
+            android:background="#5AA700"
             android:layout_marginTop="10sp"
-            android:padding="5sp"
+            android:paddingTop="5sp"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/bt_add_producer"/>
