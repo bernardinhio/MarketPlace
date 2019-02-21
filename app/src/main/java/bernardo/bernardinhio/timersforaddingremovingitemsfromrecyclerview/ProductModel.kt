@@ -5,6 +5,6 @@ data class ProductModel(
         var title : String = "",
         var location : String = "",
         var price : String =""
-){
-
+) {
+    //constructor(product : ProductModel) : this()
 }

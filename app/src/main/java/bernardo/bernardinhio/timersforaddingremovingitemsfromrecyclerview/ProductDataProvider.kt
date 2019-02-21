@@ -2,6 +2,7 @@ package bernardo.bernardinhio.timersforaddingremovingitemsfromrecyclerview
 
 import java.util.ArrayList
 
+
 class ProductDataProvider{
     companion object {
         fun getArrayListProducts() : ArrayList<ProductModel>{
@@ -178,5 +179,12 @@ class ProductDataProvider{
             return arrayListProducts
         }
 
+        fun cloneDataProvider() : ArrayList<ProductModel>{
+            var clonedArrayList : ArrayList<ProductModel> = ArrayList<ProductModel>()
+            for(item in getArrayListProducts()){
+                clonedArrayList.add(item)
+            }
+            return clonedArrayList
+        }
     }
 }

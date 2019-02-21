@@ -20,7 +20,8 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<ProductModel> arrayListOriginal, arrayListActive;
+    private ArrayList<ProductModel> arrayListOriginal = ProductDataProvider.Companion.cloneDataProvider();
+    private ArrayList<ProductModel> arrayListActive = ProductDataProvider.Companion.cloneDataProvider();
     private RecyclerView recyclerView;
     private AdapterRV adapterRV;
 
@@ -36,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arrayListOriginal = arrayListActive = ProductDataProvider.Companion.getArrayListProducts();
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-
         setOnCreateViews();
         setupRecyclerView();
         setupAdapter();
@@ -51,20 +49,22 @@ public class MainActivity extends AppCompatActivity {
 
         updateFeedbackTop(BLACK, "", View.GONE);
 
-        countCreatedProducers = countCreatedConsumers = 0;
+        countCreatedProducers = 0;
+        countCreatedConsumers = 0;
 
         tvProducersInfo.setText("Producers(" + countCreatedProducers + ")");
         tvConsumersInfo.setText("Consumers(" + countCreatedConsumers + ")");
     }
 
     private void setupRecyclerView() {
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(false);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
     }
 
     private void setupAdapter(){
-        adapterRV = new AdapterRV(arrayListOriginal);
+        adapterRV = new AdapterRV(arrayListActive);
         recyclerView.setAdapter(adapterRV);
         adapterRV.notifyDataSetChanged();
     }
@@ -157,8 +157,11 @@ public class MainActivity extends AppCompatActivity {
         // find position where itemToBeAdded is added
         int indexItemToBeAdded = arrayListActive.indexOf(itemToBeAdded);
 
-        // update the ArrayList by putting the Added element on Top (pos 0)
-        Collections.swap(arrayListActive, indexItemToBeAdded, 0);
+        if (arrayListActive.size() >= 2){
+            // Put the added element on Top (pos 0) if there is at least 1
+            // other Item + the newly added one
+            Collections.swap(arrayListActive, indexItemToBeAdded, 0);
+        }
 
         this.runOnUiThread(new Runnable() {
             @Override
