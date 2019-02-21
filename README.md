@@ -43,8 +43,7 @@ Reactive
 
 Consumer reached the last element to be removed
 
-![screenshot_1550767539](https://user-images.githubusercontent.com/20923486/53186043-8cb3bc00-3600-11e9-825c-762b5e89bbc7.png) 
-
+![screenshot_1550768303](https://user-images.githubusercontent.com/20923486/53186958-55dea580-3602-11e9-921d-6699514da57c.png) 
 
 Adding a Producer // Adding many producers and many Consumers
 
