@@ -1,6 +1,7 @@
 This App simulates a “market place” when many “sellers & buyers”, or “producers & consumers” can track the evolution of availability of products. Technically the App shows the beauty of RecyclerView & its Adapter abilities to add / delete specific Items to the list by Just updating the data provider of type ArrayList containing any data model class used in the binding of the fragment single views data.
 
-Homepage Recycler data filled
+Homepage Recycler data prefilled
+
 ![screenshot_1550767283](https://user-images.githubusercontent.com/20923486/53185763-f089b500-35ff-11e9-8679-523631429fb3.png) 
 
 
